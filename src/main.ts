@@ -89,6 +89,8 @@ const obtenPacientesAsignadosAPediatria = (
     return pacientesPediatria;
   };
 
+console.log(obtenPacientesAsignadosAPediatria(pacientes));
+
 //Apartado 1b
 const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes[]): Pacientes[] => {
     const pacientesPediatriaMenosDeDiez: Pacientes[] = [];
@@ -102,6 +104,8 @@ const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes
     return pacientesPediatriaMenosDeDiez;
   };
 
+  console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes));
+
 //Apartado 2
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
     let activarProtocolo = false;
@@ -114,18 +118,24 @@ const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
     return activarProtocolo;
   };
 
+console.log(activarProtocoloUrgencia(pacientes));
+
 //Apartado 3
 const reasignaPacientesAMedicoFamilia = (pacientes: Pacientes[]): Pacientes[] => {
+
     for (let i = 0; i < pacientes.length; i++) {
         if(pacientes[i].especialidad === "Pediatra") {
             pacientes[i].especialidad = "Medico de familia";
         }
     } 
-    return reasignaPacientesAMedicoFamilia(pacientes);
+    return pacientes;
   };
 
+console.log(reasignaPacientesAMedicoFamilia(pacientes));
+
+
 //Apartado 4
-const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
+const hayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     for (let i = 0; i < pacientes.length; i++) {
       if (pacientes[i].especialidad === "Pediatra") {
         return true;
@@ -133,6 +143,8 @@ const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
     }
     return false; // No hay pacientes asignados a pediatría
   };
+
+console.log(hayPacientesDePediatria(pacientes));
 
 //Apartado 5
 
